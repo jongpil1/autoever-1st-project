@@ -1,26 +1,32 @@
+
 interface CareerProp {
     title : string
     duration : string
     skills : string[]
-    content : string
+    summary : string
 }
 
-export default function CareerCard({title, duration, skills, content } : CareerProp) {
+export default function CareerCard({title, duration, skills, summary } : CareerProp) {
     return (
-        <article>
+        <div>
             <div>
                 {/* header */}
-                {title}
+                <h3>{title}</h3>
+                <p>{duration}</p>
             </div>
+            
             <div>
-                {duration}
+                {/* summary */}
+                {skills.map(skill => (
+                    <span>{skill}</span>
+                ))}
+                <p>{summary}</p>
             </div>
+
             <div>
-                {skills}
+                {/* main */}
+                
             </div>
-            <div>
-                {content}
-            </div>
-        </article>
+        </div>
     )
 }
