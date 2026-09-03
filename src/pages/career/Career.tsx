@@ -6,7 +6,7 @@ export default function Career() {
         <section>
             <div>
                 {/* header */}
-                <h2>📖 Career</h2>
+                <h2>Career</h2>
             </div>
             <div>
                 {/* main */}

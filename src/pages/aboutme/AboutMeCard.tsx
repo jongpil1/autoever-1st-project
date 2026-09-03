@@ -1,4 +1,5 @@
 import type React from "react"
+import styles from './AboutMeCard.module.css'
 
 interface CardProp {
     icon : React.ReactNode
@@ -8,11 +9,11 @@ interface CardProp {
 
 export default function AboutMeCard({icon , title, content} : CardProp) {
     return (
-        <div>
-            <div>
+        <div className={styles.container}>
+            <div className={styles.icon}>
                 {icon}
             </div>
-            <div>
+            <div className={styles.main}>
                 <h3>{title}</h3>
                 <span>{content}</span>
             </div>

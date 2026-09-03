@@ -1,13 +1,11 @@
+import styles from "./SkillCard.module.css";
+import type { CardProp } from "./SkillCards";
 
 
-interface SkillProp {
-    category: string
-    skills : string[]
-}
 
-export default function SkillCard({category, skills} : SkillProp) {
+export default function SkillCard({category, value} : CardProp) {
     return (
-        <div>
+        <div className={styles.card}>
 
             <div>
                 {/* category */}
@@ -15,8 +13,8 @@ export default function SkillCard({category, skills} : SkillProp) {
             </div>
             <div>
                 {/* skills */}
-                {skills.map(skill => (
-                    <span>{skill}</span>
+                {value.map(skill => (
+                    <span className={`${styles.skill} ${styles[category]}`} style={{backgroundColor : skill.color}}>{skill.text}</span>
                 ))}
             </div>
         </div>

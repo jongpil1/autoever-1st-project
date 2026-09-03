@@ -1,9 +1,10 @@
 import { Calendar, GraduationCap, Mail, Phone, User } from "lucide-react";
 import Card from "./AboutMeCard";
+import styles from './AboutMeCards.module.css'
 
 export default function AboutMeInfo() {
     return (
-        <div>
+        <div className={styles.cards}>
             <Card 
                 icon={<User/>}
                 title="이름"
@@ -30,7 +31,9 @@ export default function AboutMeInfo() {
                 content="인천대학교(컴퓨터공학부)"
             />
             <Card 
-                icon={<User/>}
+                icon={
+            <i className="devicon-github-original colored" ></i>
+          }
                 title="GitHub"
                 content="https://github.com/jongpil1"
             />

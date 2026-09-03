@@ -17,7 +17,7 @@ export default function Projects() {
     return (
         <section>
             <div>
-                <h2>💻 Projects</h2>
+                <h2>Projects</h2>
             </div>
             <div>
                 {posts?.map(post => (

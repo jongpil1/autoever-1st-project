@@ -9,24 +9,27 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <header>
-      <h1><Link to='/'>Jongpil's Portfolio</Link></h1>
-      <nav>
-        <ul className={styles.menus}>
-          <li className={styles.menu}><Link to='/'>About me</Link></li>
-          <li className={styles.menu}><Link to='/projects'>Projects</Link></li>
-          <li className={styles.menu}><Link to='/career'>Career</Link></li>
-        </ul>
-      </nav>
-    </header>
-    
-    <Routes>
-      <Route path='/' element={<AboutMe />}/>
-      <Route path='/projects' element={<Projects />}/>
-      <Route path='/career' element={<Career />}/>
-    </Routes>
+      <header className={styles.header}>
+        <h1><Link to='/'>Jongpil's Portfolio</Link></h1>
+        <nav className={styles.nav}>
+          <ul className={styles.menus}>
+            <li className={styles.menu}><Link to='/'>About me</Link></li>
+            <li className={styles.menu}><Link to='/projects'>Projects</Link></li>
+            <li className={styles.menu}><Link to='/career'>Career</Link></li>
+          </ul>
+        </nav>
+
+      </header>
+      <main>
+        <Routes>
+          <Route path='/' element={<AboutMe />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/career' element={<Career />} />
+        </Routes>
+      </main>
+
     </div>
-    
+
   )
 }
 

@@ -3,20 +3,33 @@
     margin: 0 auto;
 }
 
-header {
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: #fff;
 }
+
+
 
 .menus {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .menu {
-    
+    font-weight: 700;
+    transition: 0.3s ease; 
+}
+
+.menu a:hover{
+    color: rgba(44, 57, 195, 0.8);
+
 }
