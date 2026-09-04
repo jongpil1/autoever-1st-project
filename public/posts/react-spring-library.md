@@ -8,6 +8,10 @@ React와 Spring Boot를 기반으로 구축한 도서 관리 웹 애플리케이
 
 프론트엔드와 백엔드를 분리하여 REST API 기반으로 통신하도록 구성하였으며, 사용자의 도서 데이터를 데이터베이스에서 관리할 수 있도록 구현하였습니다.
 
+### Github 레파지토리
+- [https://github.com/jongpil1/react-spring-library](https://github.com/jongpil1/react-spring-library)
+
+
 ### 목표
 
 React 기반의 프론트엔드와 Spring Boot 기반의 백엔드를 연동하여 실제 웹 서비스에서 사용되는 REST API 구조와 데이터 처리 과정을 경험하고, 사용자와 도서 데이터를 효율적으로 관리할 수 있는 서비스를 구현하고자 하였습니다.

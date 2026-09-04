@@ -1,40 +1,57 @@
-import { useEffect, useState } from "react"
+import  { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown";
 import './ReadmeModal.css'
+import { askGemini } from "../../entities/gemini/gemini";
 
 interface ReadmeModalProps {
-    slug: string
-    title: string
-    onClose: () => void
+  slug: string
+  title: string
+  onClose: () => void
 }
 
 export default function ReadmeModal({ slug, title, onClose }: ReadmeModalProps) {
-    const [markdown, setMarkdown] = useState("")
-    const [loading, setLoading] = useState(true)
+  const [markdown, setMarkdown] = useState("")
+  const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        const fetchReadme = async () => {
-            try {
-                const response = await fetch(`/posts/${slug}.md`);
+  const [question, setQuestion] = useState("")
+  const [answer, setAnswer] = useState("")
+  const [aiLoading, setAiLoading] = useState(false)
 
-                if (!response.ok) {
-                    throw new Error("README 파일을 찾을 수 없습니다.");
-                }
+  useEffect(() => {
+    const fetchReadme = async () => {
+      try {
+        const response = await fetch(`/posts/${slug}.md`);
 
-                const text = await response.text();
-                setMarkdown(text);
-            } catch (error) {
-                console.error(error);
-                setMarkdown("# README를 불러오지 못했습니다.");
-            } finally {
-                setLoading(false);
-            }
-        };
+        if (!response.ok) {
+          throw new Error("README 파일을 찾을 수 없습니다.");
+        }
 
-        fetchReadme();
-    }, [slug])
+        const text = await response.text();
+        setMarkdown(text);
+      } catch (error) {
+        console.error(error);
+        setMarkdown("# README를 불러오지 못했습니다.");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    return (
+    fetchReadme();
+  }, [slug])
+
+  async function handleSend(text: string) : Promise<void> {
+    
+    setAiLoading(true)
+    try {
+      setAnswer(await askGemini(text))
+    } catch (e) {
+      setAnswer(`오류 : ${(e as Error).message}`)
+    } finally {
+      setAiLoading(false)
+    }
+  }
+
+  return (
     <div className="modal-overlay" onClick={onClose}>
       <div
         className="readme-modal"
@@ -52,9 +69,18 @@ export default function ReadmeModal({ slug, title, onClose }: ReadmeModalProps) 
           {loading ? (
             <p>README 불러오는 중...</p>
           ) : (
-            <ReactMarkdown>
-              {markdown}
-            </ReactMarkdown>
+            <div>
+              <ReactMarkdown>
+                {markdown}
+              </ReactMarkdown>
+              <div>
+                <p>{question}</p>
+                <p>{answer}</p>
+                <input type="text" onChange={(e) => setQuestion(e.target.value)}/>
+                <button onClick={() => handleSend(question)}>입력</button>
+              </div>
+            </div>
+
           )}
         </div>
       </div>
