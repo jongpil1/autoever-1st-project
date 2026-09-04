@@ -1,16 +1,31 @@
+/* .container {
+    /* width: 100vw; 
+} */
+
 .container {
-    padding : 80px 24px;
-    /* background: #f7f7f5; */
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
 .header {
-  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
+
 .header h2 {
-  margin: 0;
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 1000;
+
+}
+
+.header p {
+  color: #888787;
 }
 
 .main {
@@ -26,7 +41,6 @@
   flex-direction: row;
   gap: 24px;
   align-items: center;
-
 }
 
 /* 프로필 이미지 */
@@ -48,7 +62,7 @@
 
 .main h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: 48px;
+  font-weight: 1000;
   border-bottom: 1px solid black;
 }
-

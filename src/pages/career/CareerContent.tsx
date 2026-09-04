@@ -1,3 +1,5 @@
+import styles from './CareerContent.module.css'
+
 export interface CareerContentProp {
     title : string
     duration : string
@@ -7,9 +9,9 @@ export interface CareerContentProp {
 export default function CareerContent({title, duration, content} : CareerContentProp) {
     return (
         <div>
-            <div>
+            <div className={styles.main}>
                 <h4>{title}</h4>
-                <p>{duration}</p>
+                <p className={styles.duration}>{duration}</p>
                 <p>{content}</p>
             </div>
         </div>

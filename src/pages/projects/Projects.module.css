@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h2 {
+    font-size: 48px;
+    font-weight: 1000;
+    border-bottom: 1px solid black;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    ;
+}
+
+.post {
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}

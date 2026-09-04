@@ -1,5 +1,4 @@
 .app {
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -8,11 +7,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 30px;
 
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  background: #fff;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* width: 100%; */
+}
+
+.header h1 {
+    font-weight: 800;
 }
 
 
@@ -25,11 +30,14 @@
 }
 
 .menu {
-    font-weight: 700;
-    transition: 0.3s ease; 
+    font-weight: 800;
+    font-size: 20px;
+    transition: 0.3s ease;
+    margin-right: 20px;
 }
 
-.menu a:hover{
-    color: rgba(44, 57, 195, 0.8);
+.menu a:hover {
+    color: rgba(203, 203, 210, 0.8);
 
 }
+

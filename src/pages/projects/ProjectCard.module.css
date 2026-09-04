@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+
+.header h3 {
+    border: 1px solid none;
+    background-color: #e71d3e;
+    display: inline-block;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.header p {
+    border: 1px solid orange;
+    display: inline-block;
+    background-color: #f9e6b1;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.summary button{
+    border : 1px solid rgb(138, 138, 138);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}

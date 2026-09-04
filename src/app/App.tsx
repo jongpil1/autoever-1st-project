@@ -20,13 +20,12 @@ function App() {
         </nav>
 
       </header>
-      <main>
-        <Routes>
+
+      <Routes>
           <Route path='/' element={<AboutMe />} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/career' element={<Career />} />
         </Routes>
-      </main>
 
     </div>
 

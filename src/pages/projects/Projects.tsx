@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query"
 import { getPosts } from "../../entities/post/api/getPosts"
 import ProjectCard from "./ProjectCard"
+import styles from "./Projects.module.css"
 
 export default function Projects() {
-    const {data : posts, isLoading, isError } = useQuery({
-        queryKey : ['posts'],
-        queryFn : getPosts,
+    const { data: posts, isLoading, isError } = useQuery({
+        queryKey: ['posts'],
+        queryFn: getPosts,
     })
     if (isLoading) {
         return <div>loading...</div>
@@ -13,21 +14,24 @@ export default function Projects() {
     if (isError) {
         return <div>Error occured</div>
     }
-    
+
     return (
-        <section>
-            <div>
+        <section className={styles.container}>
+            <div className={styles.header}>
                 <h2>Projects</h2>
             </div>
-            <div>
+            <div className={styles.main}>
                 {posts?.map(post => (
-                    <ProjectCard
-                        key={post.id}
-                        post={post}
-                    />
+                    <div className={styles.post}>
+                        <ProjectCard
+                            key={post.id}
+                            post={post}
+                        />
+                    </div>
+
                 ))}
             </div>
-            
+
         </section>
     )
 }

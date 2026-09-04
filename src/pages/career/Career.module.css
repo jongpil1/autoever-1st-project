@@ -1,0 +1,58 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.careerHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.careerHeader h2 {
+    font-size: 48px;
+    font-weight: 1000;
+    border-bottom: 1px solid black;
+}
+
+.careerMain {}
+
+.careerCards {
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.certiHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.certiHeader h2{
+    font-size: 48px;
+    font-weight: 1000;
+    border-bottom: 1px solid black;
+}
+
+.certiMain {
+    display:flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.certiMain span {
+    font-weight: 800;
+    font-size: 20px;
+}

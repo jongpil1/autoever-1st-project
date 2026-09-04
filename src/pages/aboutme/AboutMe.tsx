@@ -7,7 +7,9 @@ export default function AboutMe() {
         <section className={styles.container}>
             <div className={styles.header}>
                 {/* header */}
-
+                <h2>백엔드 개발자 한종필입니다.</h2>
+                <p>사용자와 서비스의 흐름을 이해하고 개발하고자하는</p>
+                <p> 백엔드 개발자입니다.</p>
             </div>
             <div className={styles.main}>
                 <h2>ABOUT ME</h2>

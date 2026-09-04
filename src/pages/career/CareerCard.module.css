@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header h3 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.header p {
+    color: #888787;
+}
+
+
+.skill {
+    border: 1px solid orange;
+    border-radius: 10px;
+    background-color: #f9e6b1;
+    padding: 5px 10px;
+    margin: 0 5px 0 0;
+}
+
+.main p{
+    margin-top: 40px;
+}

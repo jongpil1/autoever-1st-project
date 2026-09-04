@@ -1,0 +1,9 @@
+.main h4 {
+    padding-left: 10px;
+    border-left: 4px solid black;
+    font-size: 18px;
+}
+
+.duration {
+    color: #888787;
+}
