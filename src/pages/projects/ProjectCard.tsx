@@ -9,21 +9,30 @@ interface PostProp {
 
 export default function ProjectCard({ post }: PostProp) {
     const [isReadmeOpen, setIsReadmeOpen] = useState(false)
+    const skills = post.skills.split(',')
     return (
         <article className={styles.container}>
+            <div>
+                <img src={`src/assets/${post.id}.png`} alt="project image" />
+            </div>
             <div className={styles.header}>
                 <h3>{post.title}</h3>
-                <p>{post.skills}</p>
+                <div>
+                    {skills.map(skill => (
+                        <span>{skill}</span>
+                    ))}
+                </div>
+
+                {/* <p>{post.skills}</p> */}
             </div>
             <div className={styles.summary}>
                 <p>{post.summary}</p>
-                <button onClick={() => setIsReadmeOpen(true)}>README</button>
+                <button onClick={() => setIsReadmeOpen(true)}>자세히 보기</button>
             </div>
             {isReadmeOpen && (
                 <ReadmeModal
-                slug={post.slug}
-                title={post.title}
-                onClose={() => setIsReadmeOpen(false)}
+                    post={post}
+                    onClose={() => setIsReadmeOpen(false)}
                 />
             )}
         </article>

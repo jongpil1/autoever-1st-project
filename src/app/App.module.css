@@ -20,6 +20,9 @@
     font-weight: 800;
 }
 
+.menuBar {
+    display: none;
+}
 
 
 .menus {
@@ -41,3 +44,57 @@
 
 }
 
+.footer {
+    margin-top: 100px;
+    background-color: black;
+    height: 100px;
+    align-content: center;
+    justify-items: center;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.584);
+    font-size: 12px;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .header {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .menus {
+        flex-direction: column;
+        display: none;
+    }
+
+
+
+    .menuBarHeader {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .menuBar {
+        display: block;
+        position: absolute;
+        right: 32px;
+        font-size: 50px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .menusActive {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        align-items: center;
+        gap: 20px;
+
+
+    }
+}

@@ -16,6 +16,9 @@ export default function Career() {
                         {/* image */}
                     </div>
                     <article className={styles.careerCards}>
+                        <div>
+                            <img src="src/assets/hyundai-autoever.jpeg" alt="hyundai" />
+                        </div>
                         {/* detail */}
                         <CareerCard
                             title="현대오토에버 웹/앱 부트캠프"
@@ -40,6 +43,27 @@ export default function Career() {
                             duration="2026.09.02 ~ (ing)"
                             content="지금까지 학습한 React, TypeScript 등의 기술을 활용하여 개인 포트폴리오 웹사이트를 개발하고 있습니다.
                                 프로젝트 및 경력 정보를 효과적으로 전달할 수 있도록 컴포넌트 기반 UI를 설계를 하고 있습니다."
+                        />
+                    </article>
+                    <article className={styles.careerCards}>
+                        <div>
+                            <img src="src/assets/incheon.jpeg" alt="incheon" />
+                        </div>
+                        <CareerCard
+                            title="인천대학교 교내 동아리"
+                            duration='2025.08 - 2026.03'
+                            skills={["React Native", "Node.js (NestJs)", "MongoDB"]}
+                            summary='"웹앱 개발 교내 스터디"'
+                        />
+                        <CareerContent
+                            title="React Native 기반 모바일 앱 개발 스터디"
+                            duration="2025.08 ~ 2025.12"
+                            content="React Native의 기본 구조와 컴포넌트, 상태 관리, 네비게이션 등을 학습하고 실습하며 모바일 앱 개발에 필요한 핵심 개념을 익혔습니다."
+                        />
+                        <CareerContent
+                            title="Node.js 기반 백엔드 개발 스터디"
+                            duration="2026.01 ~ 2026.03"
+                            content="Node.js와 Express를 활용한 서버 구축 방법과 REST API 설계, 데이터 처리 및 비동기 프로그래밍을 학습하며 백엔드 개발의 기본적인 흐름을 익혔습니다."
                         />
                     </article>
                 </div>

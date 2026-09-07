@@ -1,26 +1,25 @@
 import  { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown";
 import './ReadmeModal.css'
-import { askGemini } from "../../entities/gemini/gemini";
+import type { Post } from "../../entities/post/model/type";
+import ProjectChat from "../../widgets/ProjectChat";
+
 
 interface ReadmeModalProps {
-  slug: string
-  title: string
+  post : Post
   onClose: () => void
 }
 
-export default function ReadmeModal({ slug, title, onClose }: ReadmeModalProps) {
+export default function ReadmeModal({ post, onClose }: ReadmeModalProps) {
   const [markdown, setMarkdown] = useState("")
   const [loading, setLoading] = useState(true)
 
-  const [question, setQuestion] = useState("")
-  const [answer, setAnswer] = useState("")
-  const [aiLoading, setAiLoading] = useState(false)
+
 
   useEffect(() => {
     const fetchReadme = async () => {
       try {
-        const response = await fetch(`/posts/${slug}.md`);
+        const response = await fetch(`/posts/${post.slug}.md`);
 
         if (!response.ok) {
           throw new Error("README 파일을 찾을 수 없습니다.");
@@ -37,19 +36,9 @@ export default function ReadmeModal({ slug, title, onClose }: ReadmeModalProps) 
     };
 
     fetchReadme();
-  }, [slug])
+  }, [post.slug])
 
-  async function handleSend(text: string) : Promise<void> {
-    
-    setAiLoading(true)
-    try {
-      setAnswer(await askGemini(text))
-    } catch (e) {
-      setAnswer(`오류 : ${(e as Error).message}`)
-    } finally {
-      setAiLoading(false)
-    }
-  }
+ 
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -58,29 +47,20 @@ export default function ReadmeModal({ slug, title, onClose }: ReadmeModalProps) 
         onClick={(e) => e.stopPropagation()}
       >
         <div className="modal-header">
-          <h2>{title}</h2>
-
-          <button onClick={onClose}>
-            ×
-          </button>
+          <h2>{post.title}</h2>
+          <button onClick={onClose}>×</button>
         </div>
 
         <div className="modal-content">
           {loading ? (
             <p>README 불러오는 중...</p>
           ) : (
-            <div>
-              <ReactMarkdown>
-                {markdown}
-              </ReactMarkdown>
-              <div>
-                <p>{question}</p>
-                <p>{answer}</p>
-                <input type="text" onChange={(e) => setQuestion(e.target.value)}/>
-                <button onClick={() => handleSend(question)}>입력</button>
+            <>
+              <div className="readme-content">
+                <ReactMarkdown>{markdown}</ReactMarkdown>
               </div>
-            </div>
-
+              <ProjectChat key={post.id} project={post} />
+            </>
           )}
         </div>
       </div>
