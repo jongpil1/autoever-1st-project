@@ -1,6 +1,8 @@
 import CareerCard from "./CareerCard";
 import CareerContent from "./CareerContent";
-import styles from './Career.module.css'
+import styles from './Career.module.css';
+import hyundaiImage from '../../assets/hyundai-autoever.jpeg'
+import incheonImage from '../../assets/incheon.jpeg'
 
 export default function Career() {
     return (
@@ -17,7 +19,7 @@ export default function Career() {
                     </div>
                     <article className={styles.careerCards}>
                         <div>
-                            <img src="src/assets/hyundai-autoever.jpeg" alt="hyundai" />
+                            <img src={hyundaiImage} alt="hyundai" />
                         </div>
                         {/* detail */}
                         <CareerCard
@@ -47,7 +49,7 @@ export default function Career() {
                     </article>
                     <article className={styles.careerCards}>
                         <div>
-                            <img src="src/assets/incheon.jpeg" alt="incheon" />
+                            <img src={incheonImage} alt="incheon" />
                         </div>
                         <CareerCard
                             title="인천대학교 교내 동아리"

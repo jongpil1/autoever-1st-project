@@ -1,6 +1,7 @@
 import AboutMeCards from "./AboutMeCards";
 import SkillCards from "./SkillCards";
 import styles from './AboutMe.module.css'
+import profileImage from '../../assets/dog.avif'
 
 export default function AboutMe() {
     return (
@@ -14,7 +15,7 @@ export default function AboutMe() {
             <div className={styles.main}>
                 <h2>ABOUT ME</h2>
                 <div className={styles.aboutme}>
-                    <img className={styles.profileImage} src="src/assets/dog.avif" alt="profile" />
+                    <img className={styles.profileImage} src={profileImage} alt="profile" />
                     <AboutMeCards />
                 </div>
                 <div className={styles.skills}>

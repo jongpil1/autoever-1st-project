@@ -3,6 +3,7 @@ import type { Post } from "../../entities/post/model/type";
 import ReadmeModal from "./ReadmeModal";
 import styles from './ProjectCard.module.css'
 
+
 interface PostProp {
     post: Post
 }
@@ -13,7 +14,7 @@ export default function ProjectCard({ post }: PostProp) {
     return (
         <article className={styles.container}>
             <div>
-                <img src={`src/assets/${post.id}.png`} alt="project image" />
+                <img src={`/project/${post.id}.png`} alt="project image" />
             </div>
             <div className={styles.header}>
                 <h3>{post.title}</h3>
