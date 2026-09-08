@@ -19,8 +19,8 @@ export default function ProjectCard({ post }: PostProp) {
             <div className={styles.header}>
                 <h3>{post.title}</h3>
                 <div>
-                    {skills.map(skill => (
-                        <span>{skill}</span>
+                    {skills.map((skill, idx) => (
+                        <span key={idx}>{skill}</span>
                     ))}
                 </div>
 
