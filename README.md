@@ -1,4 +1,4 @@
-# Jongpil Portfolio
+# Jongpil Portfolio + AI Chatbot
 
 React와 TypeScript로 구현한 개인 포트폴리오 웹사이트입니다.
 
