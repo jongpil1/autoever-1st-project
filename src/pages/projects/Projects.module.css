@@ -1,3 +1,12 @@
+.loading {
+    font-size: 24px;
+    align-items: center;
+    justify-items: center;
+    height: 1000px;
+}
+
+
+
 .container {
     width: 100%;
     max-width: 1200px;

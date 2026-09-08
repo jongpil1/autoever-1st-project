@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 1000px;
+  height: 1100px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   background-image: url('../../assets/header.jpg');
   background-size: cover;
@@ -31,6 +31,34 @@
 .header p {
   color: #888787;
 }
+
+.arrowDiv {
+  margin-top: 60px;
+}
+
+.arrow {
+  cursor: pointer;
+  color: #292929;
+  
+
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+    color: #888787;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 .main {
   display: flex;

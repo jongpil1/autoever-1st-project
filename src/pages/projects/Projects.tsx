@@ -9,7 +9,7 @@ export default function Projects() {
         queryFn: getPosts,
     })
     if (isLoading) {
-        return <div>loading...</div>
+        return <div className={styles.loading}><p>Loading...</p></div>
     }
     if (isError) {
         return <div>Error occured</div>

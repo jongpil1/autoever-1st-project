@@ -2,6 +2,7 @@ import AboutMeCards from "./AboutMeCards";
 import SkillCards from "./SkillCards";
 import styles from './AboutMe.module.css'
 import profileImage from '../../assets/dog.avif'
+import { ArrowDown } from "lucide-react";
 
 export default function AboutMe() {
     return (
@@ -11,6 +12,9 @@ export default function AboutMe() {
                 <h2>백엔드 개발자 한종필입니다.</h2>
                 <p>사용자와 서비스의 흐름을 이해하고 개발하고자하는</p>
                 <p> 백엔드 개발자입니다.</p>
+                <div className={styles.arrowDiv}>
+                    <ArrowDown size={60} className={styles.arrow} onClick={() => scrollTo(2000,2000)}/>
+                </div>
             </div>
             <div className={styles.main}>
                 <h2>ABOUT ME</h2>
