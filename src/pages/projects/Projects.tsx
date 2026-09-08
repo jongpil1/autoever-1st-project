@@ -15,10 +15,15 @@ export default function Projects() {
         return <div>Error occured</div>
     }
 
+    
+
+
+
     return (
         <section className={styles.container}>
             <div className={styles.header}>
                 <h2>Projects</h2>
+                
             </div>
             <div className={styles.main}>
                 {posts?.map(post => (
